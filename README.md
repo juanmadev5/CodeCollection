@@ -22,9 +22,9 @@ CodeCollection/
 3. **wordToPdf**: Script que te permite convertir archivos de Word a PDF.
 
 ## Proyectos en Kotlin
-1. **Corroutines**: Codigo de demostración de corrutinas en Kotlin.
-2. **Threads**: Codigo de demostración del uso de hilos en Kotlin.
+1. **Corrutinas**: Codigo de demostración de corrutinas en Kotlin.
+2. **Hilos**: Codigo de demostración del uso de hilos en Kotlin.
 
 ## Proyectos en C++
-1. **Pointers**: Codigo de demostración del uso de punteros en C++.
+1. **Punteros**: Codigo de demostración del uso de punteros en C++.
 2. **Concurrencia y Paralelismo**: Codigo de demostración de concurrencia y paralelismo en C++.
