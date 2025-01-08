@@ -20,6 +20,7 @@ Mini Proyects/
 
 1. **Factorial**: Algoritmo simple de como calcular el factorial de un número usando recursividad.
 2. **Fibonacci**: Algoritmo simple de como calcular la secuencia de Fibonacci.
+3. **wordToPdf**: Script que te permite convertir archivos de Word a PDF.
 
 
 ¡Gracias por visitar el repositorio y espero que encuentres útiles estos mini proyectos!
