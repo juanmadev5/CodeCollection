@@ -1,6 +1,6 @@
 # Mini Projects
 
-Este repositorio contiene una colección de mini proyectos en varios lenguajes de programación.
+Este repositorio contiene una colección de mini proyectos, algoritmos y scripts en varios lenguajes de programación.
 
 ## Estructura del repositorio
 
@@ -29,4 +29,3 @@ Mini Proyects/
 ## Proyectos en C++
 1. **Pointers**: Codigo de demostración del uso de punteros en C++.
 
-¡Gracias por visitar el repositorio y espero que encuentres útiles estos mini proyectos!
