@@ -28,4 +28,4 @@ Mini Proyects/
 
 ## Proyectos en C++
 1. **Pointers**: Codigo de demostración del uso de punteros en C++.
-
+2. **Concurrencia y Paralelismo**: Codigo de demostración de concurrencia y paralelismo en C++.
