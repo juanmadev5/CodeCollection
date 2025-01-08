@@ -1,13 +1,12 @@
-# Mini Projects
+# CodeCollection
 
-Este repositorio contiene una colección de mini proyectos, algoritmos y scripts en varios lenguajes de programación.
+Este repositorio contiene una colección de codigos de demostración y scripts en diferentes lenguajes de programación que te pueden ayudar a solucionar algún problema
+o aprender algo nuevo.
 
 ## Estructura del repositorio
 
-Cada proyecto se encuentra en su propio directorio dentro del repositorio. La estructura es la siguiente:
-
 ```
-Mini Proyects/
+CodeCollection/
     ├── Python/
     │   ├── Proyecto1/
     │   └── Proyecto2/
