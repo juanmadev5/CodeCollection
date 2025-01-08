@@ -1,6 +1,6 @@
 # Mini Projects
 
-Este repositorio contiene una colección de mini proyectos en varios lenguajes de programación. Actualmente, estoy comenzando con proyectos en Python.
+Este repositorio contiene una colección de mini proyectos en varios lenguajes de programación.
 
 ## Estructura del repositorio
 
