@@ -26,5 +26,7 @@ Mini Proyects/
 1. **Corroutines**: Codigo de demostración de corrutinas en Kotlin.
 2. **Threads**: Codigo de demostración del uso de hilos en Kotlin.
 
+## Proyectos en C++
+1. **Pointers**: Codigo de demostración del uso de punteros en C++.
 
 ¡Gracias por visitar el repositorio y espero que encuentres útiles estos mini proyectos!
