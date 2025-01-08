@@ -22,5 +22,9 @@ Mini Proyects/
 2. **Fibonacci**: Algoritmo simple de como calcular la secuencia de Fibonacci.
 3. **wordToPdf**: Script que te permite convertir archivos de Word a PDF.
 
+## Proyectos en Kotlin
+1. **Corroutines**: Codigo de demostración de corrutinas en Kotlin.
+2. **Threads**: Codigo de demostración del uso de hilos en Kotlin.
+
 
 ¡Gracias por visitar el repositorio y espero que encuentres útiles estos mini proyectos!
