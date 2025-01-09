@@ -4,35 +4,93 @@
  * Descripción: Codigo de demostración de concurrencia y paralelismo en C++.
  */
 
+
 #include <iostream>
 #include <thread>
 #include <vector>
-#include <chrono>
+#include <numeric> // Para std::accumulate
+#include <chrono>  // Para medir el tiempo
 
-using namespace std;
-
-// Función que simula una tarea que toma tiempo
-void tarea(int id) {
-    cout << "Tarea " << id << " iniciada en hilo " << this_thread::get_id() << endl;
-    // Simula una tarea de larga duración
-    this_thread::sleep_for(chrono::seconds(2));
-    cout << "Tarea " << id << " terminada en hilo " << this_thread::get_id() << endl;
+// =======================================
+// Función que simula una tarea concurrente
+// =======================================
+void tareaConcurrente(int id) {
+    std::cout << "Iniciando tarea concurrente " << id << " en el hilo " 
+              << std::this_thread::get_id() << std::endl;
+    std::this_thread::sleep_for(std::chrono::seconds(2)); // Simula trabajo pesado
+    std::cout << "Tarea concurrente " << id << " completada.\n";
 }
 
+// =======================================
+// Función que suma un rango de números en paralelo
+// =======================================
+void sumaParcial(const std::vector<int>& datos, size_t inicio, size_t fin, long long& resultado) {
+    resultado = std::accumulate(datos.begin() + inicio, datos.begin() + fin, 0LL);
+}
+
+// =======================================
+// Función principal
+// =======================================
 int main() {
-    vector<thread> hilos;  // Vector para almacenar los hilos
+    // ------------------------------------
+    // Primera parte: Concurrencia
+    // ------------------------------------
+    const int numTareas = 3; // Número de tareas concurrentes
+    std::vector<std::thread> hilosConcurrentes;
 
-    // Inicia 4 tareas en hilos separados (concurrencia y paralelismo)
-    for (int i = 1; i <= 4; ++i) {
-        hilos.push_back(thread(tarea, i));  // Lanza un hilo para cada tarea
+    auto inicioConcurrencia = std::chrono::high_resolution_clock::now(); // Inicia el temporizador
+
+    std::cout << "== Comenzando tareas concurrentes ==\n";
+    for (int i = 0; i < numTareas; ++i) {
+        hilosConcurrentes.emplace_back(tareaConcurrente, i + 1);
     }
 
-    // Espera a que todos los hilos terminen
-    for (auto& hilo : hilos) {
-        hilo.join();  // Espera a que cada hilo termine
+    for (auto& hilo : hilosConcurrentes) {
+        if (hilo.joinable()) {
+            hilo.join(); // Esperar a que terminen todas las tareas
+        }
+    }
+    auto finConcurrencia = std::chrono::high_resolution_clock::now(); // Finaliza el temporizador
+    std::chrono::duration<double> duracionConcurrencia = finConcurrencia - inicioConcurrencia; // Calcula el tiempo
+
+    std::cout << "== Tareas concurrentes finalizadas ==\n";
+    std::cout << "Tiempo de ejecución de las tareas concurrentes: " 
+              << duracionConcurrencia.count() << " segundos\n\n";
+
+    // ------------------------------------
+    // Segunda parte: Paralelismo
+    // ------------------------------------
+    const size_t tamDatos = 1000000; // Tamaño del vector
+    const size_t numHilosParalelos = 4; // Número de hilos paralelos
+    std::vector<int> datos(tamDatos, 1); // Vector inicializado con unos
+    std::vector<std::thread> hilosParalelos;
+    std::vector<long long> resultados(numHilosParalelos, 0);
+
+    size_t rango = tamDatos / numHilosParalelos; // División del trabajo
+
+    auto inicioParalelismo = std::chrono::high_resolution_clock::now(); // Inicia el temporizador
+
+    std::cout << "== Comenzando suma paralela ==\n";
+    for (size_t i = 0; i < numHilosParalelos; ++i) {
+        size_t inicio = i * rango;
+        size_t fin = (i == numHilosParalelos - 1) ? tamDatos : inicio + rango;
+        hilosParalelos.emplace_back(sumaParcial, std::cref(datos), inicio, fin, std::ref(resultados[i]));
     }
 
-    cout << "Todas las tareas han terminado!" << endl;
+    for (auto& hilo : hilosParalelos) {
+        if (hilo.joinable()) {
+            hilo.join(); // Esperar a que cada hilo termine
+        }
+    }
+
+    long long sumaTotal = std::accumulate(resultados.begin(), resultados.end(), 0LL);
+    auto finParalelismo = std::chrono::high_resolution_clock::now(); // Finaliza el temporizador
+    std::chrono::duration<double> duracionParalelismo = finParalelismo - inicioParalelismo; // Calcula el tiempo
+
+    std::cout << "Suma total: " << sumaTotal << " (esperado: " << tamDatos << ")\n";
+    std::cout << "== Suma paralela finalizada ==\n";
+    std::cout << "Tiempo de ejecución de la suma paralela: " 
+              << duracionParalelismo.count() << " segundos\n";
 
     return 0;
 }
