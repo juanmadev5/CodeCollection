@@ -6,14 +6,27 @@
 
 import docx2pdf
 import sys
+import os
+import contextlib
+
+def suppress_output(func, *args, **kwargs):
+    with open(os.devnull, 'w') as fnull:
+        with contextlib.redirect_stdout(fnull), contextlib.redirect_stderr(fnull):
+            return func(*args, **kwargs)
 
 def wordToPdf(file):
-    docx2pdf.convert(file)
-    print("Archivo Word convertido a PDF exitosamente :D")
+    suppress_output(docx2pdf.convert, file, output_path="C:/Users/juanm/Downloads")
+    print("")
+    print("✅ Archivo Word convertido a PDF exitosamente :D")
+    print("")
+    print("")
 
 if __name__ == "__main__":
-    print("Script de conversión de archivos Word a PDF, by JM Dev")
+    print("")
+    print("")
+    print("🚀 Script de conversión de archivos Word a PDF, by JM Dev")
+    print("🛠️ Conviertiendo archivo...")
     if len(sys.argv) > 1:
         wordToPdf(sys.argv[1])
     else:
-        print("Uso: python wordToPdf.py <archivo.docx>")
+        print("⚠️ Uso: python wordToPdf.py <archivo.docx>")
