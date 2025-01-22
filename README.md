@@ -20,11 +20,3 @@ CodeCollection/
 1. **Factorial**: Algoritmo simple de como calcular el factorial de un número usando recursividad.
 2. **Fibonacci**: Algoritmo simple de como calcular la secuencia de Fibonacci.
 3. **wordToPdf**: Script que te permite convertir archivos de Word a PDF.
-
-## Proyectos en Kotlin
-1. **Corrutinas**: Codigo de demostración de corrutinas en Kotlin.
-2. **Hilos**: Codigo de demostración del uso de hilos en Kotlin.
-
-## Proyectos en C++
-1. **Punteros**: Codigo de demostración del uso de punteros en C++.
-2. **Concurrencia y Paralelismo**: Codigo de demostración de concurrencia y paralelismo en C++.
