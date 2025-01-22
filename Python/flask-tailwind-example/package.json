@@ -1,0 +1,10 @@
+{
+  "name": "flask-tailwind-example",
+  "author": {
+    "name": "JM Dev"
+  },
+  "version": "1.0.0",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
