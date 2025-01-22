@@ -1,8 +1,7 @@
 # Autor: JM Dev
 
 # Script de conversión de archivos Word a PDF con docx2pdf.
-# docx2pdf usa COM para interactuar con Microsoft Word en Windows.
-# Por lo tanto solo funciona en equipos con Windows y Microsoft Word instalado.
+# Este script solo puede funcionar en equipos Windows y MacOS con Microsoft Office (Word) instalados.
 
 import docx2pdf
 import sys
