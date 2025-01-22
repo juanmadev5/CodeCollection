@@ -3,7 +3,8 @@
 Esta es una plantilla preconfigurada para poder agregar diseño a las plantillas HTML con TailwindCSS.
 
 > [!IMPORTANT]
-> Esta plantilla lo cree usando Python 3.13.0 aunque debería funcionar con otras versiones anteriores.
+> Esta plantilla fue creado usando Python 3.13.0 y NodeJS 22.13.0 aunque debería funcionar con otras versiones anteriores que sean igual o
+> superior a Python 2.8 y NodeJS 12.13.0 teniendo en cuenta lo mínimo requerido para Flask y TailwindCSS.
 
 Primero empieza instalando todo lo necesario para que Tailwind funcione, solo ejecuta lo siguiente:
 ``` bash
