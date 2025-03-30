@@ -2,6 +2,7 @@
 
 # Script de conversión de archivos Word a PDF con docx2pdf.
 # Este script solo puede funcionar en equipos Windows y MacOS con Microsoft Office (Word) instalados.
+# Requiere tener instalado docx2pdf, instalar usando pip install docx2pdf
 
 import docx2pdf
 import sys
@@ -14,10 +15,10 @@ def suppress_output(func, *args, **kwargs):
             return func(*args, **kwargs)
 
 def wordToPdf(file):
-    suppress_output(docx2pdf.convert, file, output_path="C:/Users/juanm/Downloads")
+    suppress_output(docx2pdf.convert, file, output_path="C:/Users/Public")
     print("")
     print("✅ Archivo Word convertido a PDF exitosamente :D")
-    print("")
+    print("Ubicacion: C:/Users/Public")
     print("")
 
 if __name__ == "__main__":
